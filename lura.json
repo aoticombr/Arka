@@ -1,0 +1,27 @@
+{
+    "version": 3,
+    "name": "My lovely gateway",
+    "port": 3000,
+    "timeout": "10s",
+    "cache_ttl": "3600s",
+    "host": [
+        "http://127.0.0.1:3003"
+    ],
+    "endpoints": [{
+            "endpoint": "/signin",
+            "method": "POST",
+            "backend": [{
+                    "host": [
+                        "localhost:3003"
+                    ],
+                    "url_pattern": "/signin",
+                    "allow": [
+                        "token"
+                    ],
+                    "mapping": {
+                        "email": "personal_email"
+                    }
+                }
+            ]
+        }
+    ]}
